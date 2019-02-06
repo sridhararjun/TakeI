@@ -1,0 +1,34 @@
+module.exports.billTempleate = `
+  <html>
+     <table>
+     <tbody>
+        <tr *ngFor="let entry from {{entry}}">
+        <td>
+        entry.No
+</td>
+        <td>
+        entry.Date
+</td>
+        <td>
+        entry.Description
+</td>
+        <td>
+        entry.Time
+</td>
+        <td>
+        entry.Qty
+</td>
+         <td>
+        entry.Rate
+</td>
+        <td>
+        entry.CallSheet
+</td>
+        <td>
+        entry.Total
+</td>
+</tr>
+</tbody>
+     </table>
+  </html>
+`;

@@ -1,0 +1,98 @@
+<div class="header">
+  <div class="row">
+    <div class="col-lg-1 col-md-1"></div>
+    <div class="col-lg-10 col-md-10 col-sm-12 user-header">
+      <div class="row">
+        <div class="col-sm-12">
+          <img src="../../assets/Login/login_ellipse_logo.png" class="header-logo">
+          <span class="header-company-name">Cine Agents Association</span>
+        </div>
+        <div class="col-sm-12">
+          <div class="user-details-header">
+            <span>Admin</span> &nbsp;
+            <img src="../../assets/junior-artist-bill/forma-1@3x.png" class="user-image">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-1 col-md-1"></div>
+  </div>
+</div>
+<div class="header-2">
+  <div class = "layer"></div>
+  <div class="col-lg-1 col-md-1 col-sm-1">
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 header-2-title">
+    Junior Artists Bill
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    <div class="col-lg-10 col-md-10 col-sm-10">
+      <div class="bills">
+        <form>
+          <div class="row form-spacing">
+            <div class="form-group col-lg-3 col-md-3 col-sm-3">
+              <label class = "lblcompanyName" for="companyName">Company Name</label>
+              <input type="text" class="form-control" id="companyName" placeholder="Enter Company Name">
+            </div>
+            <div class="form-group col-lg-3 col-md-3 col-sm-3">
+              <label class = "lblagentName" for="agentName">Agent Name</label>
+              <input type="text" class="form-control" id="agentName" placeholder="Enter Agent Name">
+            </div>
+            <div class="form-group col-lg-3 col-md-3 col-sm-3">
+              <label class = "lbldate" for="date">Date</label>
+              <input type="date" class="form-control" id="date">
+            </div>
+            <div class="form-group col-lg-3 col-md-3 col-sm-3">
+              <label class = "lbllanguage" for="language">Language</label><br>
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Language</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item">Tamil</a>
+                <a class="dropdown-item">English</a>
+              </div>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr class = "titleRow">
+                <th class = "titleHeader">&nbsp;No</th>
+                <th class = "titleHeader">Date</th>
+                <th class = "titleHeader">Description</th>
+                <th class = "titleHeader">Time</th>
+                <th class = "titleHeader">Qty</th>
+                <th class = "titleHeader">Rate</th>
+                <th class = "titleHeader">Call Sheet(in days)</th>
+                <th class = "titleHeader">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let field of entry; let i = index">
+                <td><input [(ngModel)]="field.No" class="form-control" type="number" name="No" /></td>
+                <td><input [(ngModel)]="field.Date" class="form-control" type="date" name="Date" /></td>
+                <td><input [(ngModel)]="field.Description" class="form-control" type="text" name="Description" /></td>
+                <td><input [(ngModel)]="field.Time" class="form-control" type="time" name="Time" /></td>
+                <td><input [(ngModel)]="field.Qty" class="form-control" type="number" name="Qty" /></td>
+                <td><input [(ngModel)]="field.Rate" class="form-control" type="number" name="Rate" /></td>
+                <td><input [(ngModel)]="field.CallSheet" class="form-control" type="number" name="CallSheet" /></td>
+                <td><input [(ngModel)]="field.Total" class="form-control" type="number" name="Total" /></td>
+                <td>
+                  <button class="btn btn-default deleteButton" type="button" (click)="deleteFieldValue(i)"><span class="deleteIcon">-</span></button>
+                </td>
+
+              </tr>
+            </tbody>
+            <br>
+            <button class="add_button btn btn-default" type="button" (click)="addFieldValue(field)"> + Add New</button>
+
+          </table>
+
+          <button type="submit" class="btn btn-primary saveButton" (click) = "saveAndPrint()">Save & Print</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-10"></div>
+  </div>
+</div>
